@@ -46,8 +46,11 @@ def repetition_work():
             except Exception:
                 raise
 
+        logger.info("no message to send")
         asyncio.run(send_telegram_photo())
-        unprocessed_reason(8733)
+    logger.info("start unprocessed_reason")
+    unprocessed_reason(8733)
+
 def main1():
     logger.info("start main1")
     find_inquiry()
@@ -69,13 +72,13 @@ def main1():
         telegram_token = '6952860214:AAEUUVuetpIEhsv0NMGp3wF-IaXuFsUwS6w'
         telegram_id = '-1002074418471'
 
-        async def send_telegram_photo():
+        async def send_telegram_photo(re8729s=None):
             try:
                 bot = telegram.Bot(telegram_token)
                 res = await bot.send_photo(chat_id=telegram_id,
                                            photo=open('C:/Users/soun/Desktop/nh_click/result.png', 'rb'))
 
-                return res
+                return re8729s
 
             # ---------------------------------------------
             # 모든 함수의 공통 부분(Exception 처리)
@@ -91,8 +94,9 @@ def main1():
 
 if __name__=="__main__":
     main1()
-    schedule.every(3).minutes.do(repetition_work)
+    schedule.every(20).seconds.do(repetition_work)
 
     while True:
         schedule.run_pending()
-        time.sleep(1)
+        time.sleep(0.2)
+        
