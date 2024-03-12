@@ -1,0 +1,135 @@
+start main1
+STREAM b'IHDR' 16 13
+STREAM b'sRGB' 41 1
+STREAM b'gAMA' 54 4
+STREAM b'pHYs' 70 9
+STREAM b'IDAT' 91 1658
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+%(asctime)s - %(levelname)s - %(message)s
+2024-02-21 15:47:06,842 - [monitor_schedule.py:52] INFO -> start main1
+2024-02-21 15:47:22,993 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-02-21 15:47:33,386 - [monitor_schedule.py:66] INFO -> no message to send
+2024-02-21 15:54:30,389 - [monitor_schedule.py:52] INFO -> start main1
+2024-02-21 15:54:46,959 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-02-21 15:54:57,184 - [monitor_schedule.py:66] INFO -> no message to send
+2024-02-21 15:58:36,821 - [monitor_schedule.py:52] INFO -> start main1
+2024-02-21 15:58:52,344 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-02-21 15:59:02,601 - [monitor_schedule.py:66] INFO -> no message to send
+2024-02-21 16:00:49,280 - [monitor_schedule.py:52] INFO -> start main1
+2024-02-21 16:01:05,356 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-02-21 16:01:15,704 - [monitor_schedule.py:66] INFO -> no message to send
+2024-02-27 15:16:26,359 - [monitor_schedule.py:55] INFO -> start main1
+2024-02-27 15:16:41,906 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-02-27 15:17:50,546 - [monitor_schedule.py:55] INFO -> start main1
+2024-02-27 15:18:06,341 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-02-27 15:18:16,649 - [monitor_schedule.py:69] INFO -> no message to send
+2024-02-27 15:18:40,494 - [monitor_schedule.py:24] INFO -> start repetition
+2024-02-27 15:26:17,753 - [monitor_schedule.py:55] INFO -> start main1
+2024-02-27 15:26:34,373 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-02-27 15:26:45,101 - [monitor_schedule.py:69] INFO -> no message to send
+2024-02-27 15:27:08,554 - [monitor_schedule.py:24] INFO -> start repetition
+2024-02-27 15:27:15,507 - [monitor_schedule.py:29] INFO -> result is empty
+2024-02-27 15:27:15,507 - [monitor_schedule.py:51] INFO -> start unprocessed_reason
+2024-02-27 15:27:38,068 - [monitor_schedule.py:24] INFO -> start repetition
+2024-02-27 15:27:45,047 - [monitor_schedule.py:29] INFO -> result is empty
+2024-02-27 15:27:45,047 - [monitor_schedule.py:51] INFO -> start unprocessed_reason
+2024-03-12 15:13:23,685 - [monitor_schedule.py:55] INFO -> start main1
+2024-03-12 15:13:37,583 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-03-12 15:13:47,899 - [monitor_schedule.py:69] INFO -> no message to send
+2024-03-12 15:14:10,873 - [monitor_schedule.py:24] INFO -> start repetition
+2024-03-12 15:14:17,707 - [monitor_schedule.py:29] INFO -> result is empty
+2024-03-12 15:14:17,707 - [monitor_schedule.py:51] INFO -> start unprocessed_reason
+2024-03-12 15:14:40,085 - [monitor_schedule.py:24] INFO -> start repetition
+2024-03-12 15:14:45,411 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:46,344 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:47,273 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:48,211 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:49,141 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:50,058 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:50,956 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:51,871 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:52,803 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:53,722 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:54,644 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:55,579 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:56,505 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:57,423 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:58,365 - [move_.py:99] ERROR -> 
+2024-03-12 15:14:59,285 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:00,192 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:01,117 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:02,045 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:02,958 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:03,879 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:04,792 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:05,727 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:06,640 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:07,557 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:08,456 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:09,371 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:10,275 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:11,202 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:12,121 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:13,042 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:13,963 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:14,872 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:15,771 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:16,673 - [move_.py:99] ERROR -> 
+2024-03-12 15:15:17,591 - [move_.py:99] ERROR -> 
+2024-03-12 15:22:22,098 - [monitor_schedule.py:57] INFO -> start main1
+2024-03-12 15:22:35,923 - [move_.py:68] ERROR -> image "8733_active.png" not found. Trying alternative image.
+2024-03-12 15:22:46,130 - [monitor_schedule.py:71] INFO -> no message to send
+2024-03-12 15:23:03,942 - [monitor_schedule.py:26] INFO -> start repetition
+2024-03-12 15:23:10,737 - [monitor_schedule.py:31] INFO -> result is empty
+2024-03-12 15:23:10,737 - [monitor_schedule.py:53] INFO -> start unprocessed_reason
+2024-03-12 15:23:28,089 - [monitor_schedule.py:26] INFO -> start repetition
+2024-03-12 15:23:28,912 - [monitor_schedule.py:123] ERROR -> 
+2024-03-12 15:23:30,234 - [_client.py:1773] INFO -> HTTP Request: POST https://api.telegram.org/bot6952860214:AAEUUVuetpIEhsv0NMGp3wF-IaXuFsUwS6w/sendMessage "HTTP/1.1 200 OK"

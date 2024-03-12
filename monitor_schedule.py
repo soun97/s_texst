@@ -1,5 +1,6 @@
 import asyncio
 import logging
+import traceback
 import pyautogui
 import schedule
 import time
@@ -72,13 +73,13 @@ def main1():
         telegram_token = '6952860214:AAEUUVuetpIEhsv0NMGp3wF-IaXuFsUwS6w'
         telegram_id = '-1002074418471'
 
-        async def send_telegram_photo(re8729s=None):
+        async def send_telegram_photo():
             try:
                 bot = telegram.Bot(telegram_token)
                 res = await bot.send_photo(chat_id=telegram_id,
                                            photo=open('C:/Users/soun/Desktop/nh_click/result.png', 'rb'))
 
-                return re8729s
+
 
             # ---------------------------------------------
             # 모든 함수의 공통 부분(Exception 처리)
@@ -92,11 +93,31 @@ def main1():
     write_password("8733.png")
     unprocessed_reason(8733)
 
-if __name__=="__main__":
-    main1()
-    schedule.every(20).seconds.do(repetition_work)
 
-    while True:
-        schedule.run_pending()
-        time.sleep(0.2)
-        
+async def send_telegram_message(text):
+    telegram_token = '6952860214:AAEUUVuetpIEhsv0NMGp3wF-IaXuFsUwS6w'
+    telegram_id = '-1002074418471'
+    try:
+        bot = telegram.Bot(telegram_token)
+        res = await bot.send_message(chat_id=telegram_id,
+                                   text=text)
+    # ---------------------------------------------
+    # 모든 함수의 공통 부분(Exception 처리)
+    # ---------------------------------------------
+    except Exception:
+        raise Exception
+
+
+
+
+if __name__=="__main__":
+    try:
+        main1()
+        schedule.every(15).seconds.do(repetition_work)
+
+        while True:
+            schedule.run_pending()
+            time.sleep(0.2)
+    except Exception as ex:
+        logging.error(ex)
+        asyncio.run(send_telegram_message(f"exception raised: {traceback.format_exc()}"))
