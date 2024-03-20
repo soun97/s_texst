@@ -24,6 +24,7 @@ print("image_path : ", image_path)
 step=config["loan"]["step"]
 
 
+
 def find_inquiry():
     pyautogui.click(133,63)
     pyautogui.typewrite('8729')
@@ -110,7 +111,7 @@ def unprocessed_reason(win_num):
     "#미처리사유
     """
     try:
-        image_click_and_move(f"{win_num}.png", 0, 100, sleep_sec=0)
+        image_click_and_move(f"{win_num}.png", 0, 105, sleep_sec=0)
         # pyautogui.press('enter')
         try:
 
@@ -125,7 +126,7 @@ def unprocessed_reason(win_num):
             logger.error(ex)
 
     except pyautogui.ImageNotFoundException:
-        image_click_and_move(f"{win_num}_active.png", 0, 100, sleep_sec=0)
+        image_click_and_move(f"{win_num}_active.png", 0, 105, sleep_sec=0)
         try:
             pyautogui.rightClick()
             time.sleep(0.3)
@@ -179,7 +180,7 @@ def write_password(win_name):
     pyautogui.press('enter')
     pyautogui.typewrite('vhfptmxm')
 
-def get_result():
+def merge_files():
     # -------------------------------------------------------
     # balance, inquiry file filtering
     # ------------------------------------------------------
@@ -187,8 +188,8 @@ def get_result():
     new_balance = balance_df[['종목코드', '종목명', '구분', '잔고수량']]
     inquiry_df = pd.read_csv('C:/Users/soun/Desktop/nh_click/inquiry.csv', encoding='cp949')
     new_inquiry = inquiry_df[['종목코드', '종목명', '기준수량']]
-    new_inquiry['종목코드'] = new_inquiry['종목코드'].astype('str')
-    new_balance['종목코드'] = new_balance['종목코드'].astype('str')
+    # new_inquiry['종목코드'] = new_inquiry['종목코드'].astype('str')
+    # new_balance['종목코드'] = new_balance['종목코드'].astype('str')
     # -------------------------------------------------------
     # merge & calculate :설정상환단계보다 현금보유량이 낮으면 알림
     # ------------------------------------------------------
@@ -196,12 +197,25 @@ def get_result():
     merge[f'기준가*{step}'] = merge['기준수량'] * int(step)
     merge = merge.dropna()
     merge['잔고수량'] = merge['잔고수량'].str.replace(",", "").astype('int')
+    return merge
+
+def get_loan_balance():
+    # -------------------------------------------------------
+    # balance, inquiry file filtering
+    # ------------------------------------------------------
+    merge = merge_files()
     담보 = merge[merge['구분'] == '대출담보']
     현금 = merge[merge['구분'] == '현금']
     merge2 = pd.merge(담보, 현금, left_on='종목코드', right_on='종목코드', how='left', suffixes=('_대출', '_현금'))
     result = merge2[merge2['잔고수량_현금'] < merge2[f'기준가*{step}_현금']]
     return result
 
+def get_balance():
+    merge = merge_files()
+    filtered_df = merge.groupby('종목명_x').filter(lambda x: (x['구분'] == '현금').all())
+    empty_balance = filtered_df[filtered_df['잔고수량'] == 0]
+    empty_balance = pd.DataFrame(empty_balance)
+    return empty_balance
 
 if __name__ == "__main__":
     find_inquiry()

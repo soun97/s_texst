@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>379</width>
-    <height>200</height>
+    <height>235</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,27 +17,41 @@
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>60</y>
+     <y>10</y>
      <width>118</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="time">
+    <time>
+     <hour>9</hour>
+     <minute>0</minute>
+     <second>0</second>
+    </time>
    </property>
   </widget>
   <widget class="QTimeEdit" name="end_time_edit">
    <property name="geometry">
     <rect>
      <x>140</x>
-     <y>90</y>
+     <y>40</y>
      <width>118</width>
      <height>22</height>
     </rect>
+   </property>
+   <property name="time">
+    <time>
+     <hour>15</hour>
+     <minute>30</minute>
+     <second>0</second>
+    </time>
    </property>
   </widget>
   <widget class="QLabel" name="label">
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>60</y>
+     <y>10</y>
      <width>61</width>
      <height>21</height>
     </rect>
@@ -50,7 +64,7 @@
    <property name="geometry">
     <rect>
      <x>70</x>
-     <y>90</y>
+     <y>40</y>
      <width>61</width>
      <height>21</height>
     </rect>
@@ -62,14 +76,37 @@
   <widget class="QPushButton" name="okButton">
    <property name="geometry">
     <rect>
-     <x>240</x>
-     <y>140</y>
+     <x>210</x>
+     <y>80</y>
      <width>75</width>
      <height>23</height>
     </rect>
    </property>
    <property name="text">
-    <string>OK</string>
+    <string>START</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="statusTextEdit">
+   <property name="geometry">
+    <rect>
+     <x>10</x>
+     <y>130</y>
+     <width>361</width>
+     <height>101</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="okButton_2">
+   <property name="geometry">
+    <rect>
+     <x>290</x>
+     <y>80</y>
+     <width>75</width>
+     <height>23</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>STOP</string>
    </property>
   </widget>
  </widget>
