@@ -5,9 +5,12 @@ from PyQt5.QtWidgets import *
 from PyQt5 import uic
 from PyQt5.uic.properties import QtGui, QtCore
 
-from monitor_schedule import start_scheduler
+from scheduler import start_scheduler
+from datetime import datetime, timedelta
 
 form_class = uic.loadUiType("MARKET_TIME.ui")[0]
+
+IS_DEBUG = True
 
 class MyWindow(QMainWindow, form_class):
     def __init__(self):
@@ -19,14 +22,17 @@ class MyWindow(QMainWindow, form_class):
         self.start_time_edit: QTimeEdit
         self.end_time_edit: QTimeEdit
 
+        if IS_DEBUG:
+            self.start_time_edit.setDateTime(datetime.now() + timedelta(minutes=1))
+            self.end_time_edit.setDateTime(datetime.now() + timedelta(minutes=30))
+
         self.okButton: QPushButton
         self.okButton.clicked.connect(self.buttonClick)
 
         self.statusTextEdit: QTextEdit
 
-
-
     def buttonClick(self):
+        # self.okButton.setDisabled()  # button disabled
         start_time=(self.start_time_edit.time())
         time_string = start_time.toString("hh:mm")
         self.statusTextEdit.append(time_string)
