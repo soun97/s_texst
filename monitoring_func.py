@@ -78,7 +78,7 @@ def find_balance(win_num):
     try:
         time.sleep(0.3)
         image_click_and_move(f"{win_num}.png", 0, 200, sleep_sec=3)
-        pyautogui.press('enter')
+
     except pyautogui.ImageNotFoundException:
         time.sleep(0.3)
         image_click_and_move(f"{win_num}_active.png", 0, 200, sleep_sec=3)
@@ -110,31 +110,19 @@ def unprocessed_reason(win_num):
     try:
         image_click_and_move(f"{win_num}.png", 0, 105, sleep_sec=0)
         # pyautogui.press('enter')
-        try:
-
-            pyautogui.rightClick()
-            time.sleep(0.3)
-            # csv저장클릭
-            save_csv = pyautogui.locateOnScreen(f'{image_path}/save_csv.png')
-            save_center = pyautogui.center(save_csv)
-            pyautogui.click(save_center)
-            time.sleep(0.3)
-        except Exception as ex:
-            logger.error(ex)
-
     except pyautogui.ImageNotFoundException:
         image_click_and_move(f"{win_num}_active.png", 0, 105, sleep_sec=0)
-        try:
-            pyautogui.rightClick()
-            time.sleep(0.3)
-            # csv저장클릭
-            save_csv = pyautogui.locateOnScreen(f'{image_path}/save_csv.png')
-            save_center = pyautogui.center(save_csv)
-            pyautogui.click(save_center)
-            time.sleep(0.3)
-        except Exception as ex:
-            logger.error(ex)
 
+    try:
+        pyautogui.rightClick()
+        time.sleep(0.3)
+        # csv저장클릭
+        save_csv = pyautogui.locateOnScreen(f'{image_path}/save_csv.png')
+        save_center = pyautogui.center(save_csv)
+        pyautogui.click(save_center)
+        time.sleep(0.3)
+    except Exception as ex:
+        logger.error(ex)
     pyautogui.typewrite('C:\\Users\\soun\\Desktop\\nh_click\\unprocessed_reason.csv')
     pyautogui.press('enter')
 

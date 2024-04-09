@@ -1,5 +1,5 @@
 import traceback
-
+import asyncio
 import telegram
 
 
@@ -27,3 +27,19 @@ class TeleBot:
         # ---------------------------------------------
         except Exception:
             raise Exception
+
+    async def send_telegram_photo(self, image):
+
+        telegram_id = '-1002074418471'
+
+        try:
+            res = await self.bot.send_photo(chat_id=telegram_id,
+                                                 photo=open(f'C:/Users/soun/Desktop/nh_click/{image}.png', 'rb'))
+
+            return res
+
+        # ---------------------------------------------
+        # 모든 함수의 공통 부분(Exception 처리)
+        # ---------------------------------------------
+        except Exception:
+            raise

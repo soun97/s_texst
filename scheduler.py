@@ -10,7 +10,8 @@ from datetime import datetime, timedelta
 from configparser import ConfigParser
 import pandas as pd
 from monitoring_func import find_inquiry, drag_window, find_balance, unprocessed_reason, image_click_and_move, \
-    write_password, merge_files, get_balance, get_loan_balance, send_telegram_message
+    write_password, merge_files, get_balance, get_loan_balance
+from nh_click_class import 반복작업
 from telebot import TeleBot
 
 formater = logging.Formatter("%(asctime)s - [%(filename)s:%(lineno)d] %(levelname)s -> %(message)s")
@@ -75,68 +76,55 @@ def repetition_work():
     loop돌기[대출잔고,현재잔고 확인 > 미처리사유확인]
 
     """
-    global main_job_done
-    if not main_job_done:
-        logger.debug("main job not done")
-        return
+    # global main_job_done
+    # if not main_job_done:
+    #     logger.debug("main job not done")
+    #     return
 
     logger.info("start repetition")
-    find_balance(8655)
-    result = get_loan_balance()
+    # find_balance(8655)
+
+    work = 반복작업(step=step, image_path=image_path)
+
+    result = work.get_loan_balance()
 
     if result.empty:
         logger.info("result is empty")
     else:
         dfi.export(result, 'result.png')
-        telegram_token = '6952860214:AAEUUVuetpIEhsv0NMGp3wF-IaXuFsUwS6w'
-        telegram_id = '-1002074418471'
 
-        async def send_telegram_photo():
-            try:
-                bot = telegram.Bot(telegram_token)
-                res = await bot.send_photo(chat_id=telegram_id,
-                                           photo=open('C:/Users/soun/Desktop/nh_click/result.png', 'rb'))
 
-                return res
+        asyncio.run(bot.send_telegram_photo('result'))
 
-            # ---------------------------------------------
-            # 모든 함수의 공통 부분(Exception 처리)
-            # ---------------------------------------------
-            except Exception:
-                raise
-
-        logger.info("no message to send")
-        asyncio.run(send_telegram_photo())
-
-    result2=get_balance()
-
-    if result2.empty:
-        logger.info("result2 is empty")
-
-    else:
-        dfi.export(result2, 'result2.png')
-        telegram_token = '6952860214:AAEUUVuetpIEhsv0NMGp3wF-IaXuFsUwS6w'
-        telegram_id = '-1002074418471'
-
-        async def send_telegram_photo():
-            try:
-                bot = telegram.Bot(telegram_token)
-                res = await bot.send_photo(chat_id=telegram_id,
-                                           photo=open('C:/Users/soun/Desktop/nh_click/result2.png', 'rb'))
-
-                return res
-
-            # ---------------------------------------------
-            # 모든 함수의 공통 부분(Exception 처리)
-            # ---------------------------------------------
-            except Exception:
-                raise
-
-        logger.info("no message to send")
-        asyncio.run(send_telegram_photo())
-
-    logger.info("start unprocessed_reason")
-    unprocessed_reason(8733)
+    # result2=work.get_balance()
+    #
+    # if result2.empty:
+    #     logger.info("result2 is empty")
+    #
+    # else:
+    #     dfi.export(result2, 'result2.png')
+    #     telegram_token = '6952860214:AAEUUVuetpIEhsv0NMGp3wF-IaXuFsUwS6w'
+    #     telegram_id = '-1002074418471'
+    #
+    #     async def send_telegram_photo():
+    #         try:
+    #             bot = telegram.Bot(telegram_token)
+    #             res = await bot.send_photo(chat_id=telegram_id,
+    #                                        photo=open('C:/Users/soun/Desktop/nh_click/result2.png', 'rb'))
+    #
+    #             return res
+    #
+    #         # ---------------------------------------------
+    #         # 모든 함수의 공통 부분(Exception 처리)
+    #         # ---------------------------------------------
+    #         except Exception:
+    #             raise
+    #
+    #     logger.info("no message to send")
+    #     asyncio.run(send_telegram_photo())
+    #
+    # logger.info("start unprocessed_reason")
+    # unprocessed_reason(8733)
 
 def main1():
     """
@@ -161,25 +149,8 @@ def main1():
         logger.info("no message to send")
     else:
         dfi.export(result, 'result.png')
-        telegram_token = '6952860214:AAEUUVuetpIEhsv0NMGp3wF-IaXuFsUwS6w'
-        telegram_id = '-1002074418471'
 
-        async def send_telegram_photo():
-            try:
-                bot = telegram.Bot(telegram_token)
-                res = await bot.send_photo(chat_id=telegram_id,
-                                           photo=open('C:/Users/soun/Desktop/nh_click/result.png', 'rb'))
-
-
-
-            # ---------------------------------------------
-            # 모든 함수의 공통 부분(Exception 처리)
-            # ---------------------------------------------
-            except Exception:
-                raise
-
-
-        asyncio.run(send_telegram_photo())
+        asyncio.run(bot.send_telegram_photo("result"))
 
     result2 = get_balance()
 
@@ -216,6 +187,4 @@ def main1():
 
 
 if __name__ == "__main__":
-    start_time = datetime.now() + timedelta(minutes=1)
-    end_time = datetime.now() + timedelta(minutes=10)
-    start_scheduler(start_time.strftime("%H:%M"), end_time.strftime("%H:%M"), logfunc=print)
+    repetition_work()
